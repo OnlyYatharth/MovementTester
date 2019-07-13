@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+    <title>MOVEMENT TESTER</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+
+     <style type="text/css">
+		#shape{
+			width : 100px;
+			height : 100px;
+			background-color : #18ffa2;
+			display : block;
+			position : relative;
+			top : 0 px;
+			left : 0 px;
+			right : 0px;
+			down : 0 px;
+		}
+		#Container{
+			position : relative;
+		    width : 400px;
+			height : 400px;
+			border : 2px #191919 solid;
+			left : 0px;
+			}
+		
+	 </style>
+</head>
+
+<body>
+	<div id="Container">
+	<div id="shape"></div>
+	</div>
+	<script type="text/javascript">
+	var k =0;
+	var z =0;
+	var inc = 100;
+	function movedown()
+	{
+	if(k == 300){return};
+	k = k + inc;
+	console.log("K = " + k);
+	document.getElementById("shape").style.top = k + "px";
+	}
+	function moveup()
+	{
+	if(k == 0){return};
+	k = k - inc;
+	console.log("K = " + k);
+	document.getElementById("shape").style.top = k + "px";
+	}
+	function moveright()
+	{
+	if(z == 300){return};
+	z = z +inc;
+	console.log("Z = " + z);
+	document.getElementById("shape").style.left = z + "px";
+	}
+	function moveleft()
+	{
+	if(z == 0){return};
+	z = z - inc;
+	console.log("Z = " + z);
+	document.getElementById("shape").style.left = z + "px";
+	}
+	window.addEventListener('keydown',function(e){
+		console.log(e.keyCode);
+		if(e.keyCode == '37')
+		{
+		console.log("move left");
+		moveleft();	
+		}
+		if(e.keyCode == '38')
+		{
+		console.log("move up");
+		moveup();
+		}
+		if(e.keyCode == '39')
+		{
+		console.log("move right");
+		moveright();
+		}
+		if(e.keyCode == '40')
+		{
+		console.log("move down");
+		movedown();
+		}
+	});
+	
+	</script>
+</body>
+</html> 
